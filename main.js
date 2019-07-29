@@ -11,6 +11,7 @@ fetch('https://api.github.com/users/piotrn-87/repos?sort=updated&direction=desc'
             href="${repo.html_url}"> ${repo.name}</a></li>`;
         }
     })
+
     .catch(err => {
         console.log(err);
     })
