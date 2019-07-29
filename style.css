@@ -1,0 +1,31 @@
+.list {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list__item {
+    background: rgb(13, 81, 90);
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.list__link {
+    text-decoration: none;
+    color: #eee;
+    transition: color .3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.list__link:hover {
+    color: coral;
+}
+
+@supports(display: grid) {
+    .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
