@@ -18,14 +18,36 @@ html {
 
 body {
   color: $black;
-  background: $green;
+  background: radial-gradient($accent-4, $accent-3);
 }
 
 .header {
+  text-align: center;
+  padding: 2rem 0;
+
   &__title {
+    color: #fff;
     font-family: 'Lato', sans-serif;
-    font-size: 2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1rem;
+    text-transform: uppercase;
   }
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  height: 100vh;
+  max-width: 640px;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
 }
 
 .list {
@@ -57,5 +79,27 @@ body {
   .list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.footer {
+  background: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+
+  &__text {
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
+  }
+}
+
+.social {
+  &__link {
+    padding: 0 1rem;
   }
 }
