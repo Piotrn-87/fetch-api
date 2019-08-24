@@ -33,17 +33,19 @@ submit.addEventListener("click", (e) => {
         const {
           name,
           description,
-          html_url
+          html_url,
+          avatar_url
         } = repo;
+        // console.log(repository.length);
         list.innerHTML +=
           `<li class="project">
             <div class="project__wrapper">
-             <h3 class="project__name">${name}</h3>
-              <div class="project-footer">
+             <h3 class="project__name"> ${name}</h3>
+            <div class="project-footer">
                <img class="project-footer__logo" src="assets/img/github.svg" alt="github image">
                 ${description ? `<p class="project-footer__descrpition">${description}</p>`: 'No Description'}
                   <a class = "project-footer__link" href="${html_url}"> ${name}</a>
-              </div>
+            </div>
             </div>
           </li>`;
       }
