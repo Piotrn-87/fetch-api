@@ -360,7 +360,6 @@ body {
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 2rem;
-  grid-row-gap: 1rem;
   padding: 1rem; }
   .form .form__label-title,
   .form .form__label-name,
@@ -386,35 +385,53 @@ body {
     font-size: 1.3rem;
     font-weight: bold; }
 
-.list {
+.button {
   display: block;
+  padding: 0 1rem;
+  text-align: end;
+  width: 100%; }
+  .button__submit {
+    background: #eee;
+    border: none;
+    border-radius: .1rem;
+    cursor: pointer;
+    font-family: inherit;
+    margin-right: .5rem;
+    padding: .5rem;
+    text-transform: uppercase;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    width: calc((100% / 2) - 2rem); }
+    .button__submit:hover {
+      background: #0d515a;
+      color: #eee; }
+
+.list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
   list-style-type: none;
   padding: 2rem 0;
   margin: 0; }
-
-.list__item {
-  background: #0d515a;
-  padding: 1rem;
-  margin: 0.5rem;
-  text-align: center; }
-
-.list__link {
-  text-decoration: none;
-  color: #eee;
-  -webkit-transition: color .3s ease-in-out;
-  -o-transition: color .3s ease-in-out;
-  transition: color .3s ease-in-out;
-  text-transform: uppercase; }
-
-.list__link:hover {
-  color: coral; }
-
-@supports ((display: -ms-grid) or (display: grid)) {
-  .list {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr; } }
+  @media (max-width: 641px) {
+    .list {
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); } }
+  .list__item {
+    background: #0d515a;
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center; }
+  .list__link {
+    text-decoration: none;
+    color: #eee;
+    -webkit-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+    text-transform: uppercase; }
+  .list:hover {
+    color: coral; }
 
 .footer {
   background: coral;

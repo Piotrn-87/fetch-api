@@ -54,7 +54,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 2rem;
-  grid-row-gap: 1rem;
   padding: 1rem;
 
   .form__label-title,
@@ -89,35 +88,59 @@ body {
   }
 }
 
-.list {
+.button {
   display: block;
+  padding: 0 1rem;
+  text-align: end;
+  width: 100%;
+
+  &__submit {
+    background: #eee;
+    border: none;
+    border-radius: .1rem;
+    cursor: pointer;
+    font-family: inherit;
+    margin-right: .5rem;
+    padding: .5rem;
+    text-transform: uppercase;
+    transition: .3s ease-in-out;
+    width: calc((100% / 2) - 2rem);
+
+    &:hover {
+      background: rgb(13, 81, 90);
+      color: #eee;
+    }
+  }
+}
+
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
   list-style-type: none;
   padding: 2rem 0;
   margin: 0;
-}
 
-.list__item {
-  background: rgb(13, 81, 90);
-  padding: 1rem;
-  margin: 0.5rem;
-  text-align: center;
-}
+  @media (max-width: $mobile) {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  }
 
-.list__link {
-  text-decoration: none;
-  color: #eee;
-  transition: color .3s ease-in-out;
-  text-transform: uppercase;
-}
+  &__item {
+    background: rgb(13, 81, 90);
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+  }
 
-.list__link:hover {
-  color: coral;
-}
+  &__link {
+    text-decoration: none;
+    color: #eee;
+    transition: color .3s ease-in-out;
+    text-transform: uppercase;
+  }
 
-@supports(display: grid) {
-  .list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  &:hover {
+    color: coral;
   }
 }
 
