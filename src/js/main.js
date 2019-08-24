@@ -28,12 +28,24 @@ submit.addEventListener("click", (e) => {
   fetch(`https://api.github.com/users/${inputValue}/repos?sort=updated&direction=${sort}`)
     .then(resp => resp.json())
     .then(resp => {
-      const repos = resp;
-      for (const repo of repos) {
+      const repository = resp;
+      for (const repo of repository) {
+        const {
+          name,
+          description,
+          html_url
+        } = repo;
         list.innerHTML +=
-          `<li class="list__item">
-            <a class = "list__link" 
-            href="${repo.html_url}"> ${repo.name}</a></li>`;
+          `<li class="project">
+            <div class="project__wrapper">
+             <h3 class="project__name">${name}</h3>
+              <div class="project-footer">
+               <img class="project-footer__logo" src="assets/img/github.svg" alt="github image">
+                ${description ? `<p class="project-footer__descrpition">${description}</p>`: 'No Description'}
+                  <a class = "project-footer__link" href="${html_url}"> ${name}</a>
+              </div>
+            </div>
+          </li>`;
       }
     })
     .catch(err => {
