@@ -339,7 +339,7 @@ body {
 
 .main {
   height: 100%;
-  max-width: 640px;
+  max-width: 40rem;
   padding: 1rem;
   position: relative;
   width: 100%; }
@@ -397,6 +397,7 @@ body {
     cursor: pointer;
     font-family: inherit;
     margin-right: .5rem;
+    margin-bottom: 1.1rem;
     padding: .5rem;
     text-transform: uppercase;
     -webkit-transition: .3s ease-in-out;
@@ -418,6 +419,20 @@ body {
   @media (max-width: 641px) {
     .list {
       grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); } }
+  .list .wrapper {
+    background: #363636;
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    height: 150px;
+    width: 100%; }
+    .list .wrapper__header {
+      background: lightgrey;
+      -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+              box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+      height: 25%;
+      width: 100%;
+      display: block; }
 
 .project__name {
   color: #000;
