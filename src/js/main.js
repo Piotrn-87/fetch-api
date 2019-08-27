@@ -6,6 +6,7 @@ const direction = document.querySelector(".form__select-direction--js");
 const submit = document.querySelector(".button__submit--js");
 const headerText = document.querySelector('.header__title--js');
 const list = document.querySelector(".list--js");
+const wrapper = document.querySelector(".wrapper--js");
 
 const text = "Lists users repositories from Github account";
 const time = 200;
