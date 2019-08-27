@@ -36,10 +36,9 @@ submit.addEventListener("click", (e) => {
           html_url,
           avatar_url
         } = repo;
-        // console.log(repository.length);
         list.innerHTML +=
           `<li class="project">
-            <div class="project__wrapper">
+            <div class="project__wrapper">            
              <h3 class="project__name"> ${name}</h3>
             <div class="project-footer">
                <img class="project-footer__logo" src="assets/img/github.svg" alt="github image">
